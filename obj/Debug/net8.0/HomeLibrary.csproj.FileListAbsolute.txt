@@ -12,3 +12,4 @@ C:\c#PS\HomeLibrary\obj\Debug\net8.0\refint\HomeLibrary.dll
 C:\c#PS\HomeLibrary\obj\Debug\net8.0\HomeLibrary.pdb
 C:\c#PS\HomeLibrary\obj\Debug\net8.0\HomeLibrary.genruntimeconfig.cache
 C:\c#PS\HomeLibrary\obj\Debug\net8.0\ref\HomeLibrary.dll
+c:\c#PS\HomeLibrary\obj\Debug\net8.0\HomeLibrary.sourcelink.json
