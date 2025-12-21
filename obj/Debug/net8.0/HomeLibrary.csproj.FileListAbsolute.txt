@@ -1,0 +1,14 @@
+C:\c#PS\HomeLibrary\bin\Debug\net8.0\HomeLibrary.exe
+C:\c#PS\HomeLibrary\bin\Debug\net8.0\HomeLibrary.deps.json
+C:\c#PS\HomeLibrary\bin\Debug\net8.0\HomeLibrary.runtimeconfig.json
+C:\c#PS\HomeLibrary\bin\Debug\net8.0\HomeLibrary.dll
+C:\c#PS\HomeLibrary\bin\Debug\net8.0\HomeLibrary.pdb
+C:\c#PS\HomeLibrary\obj\Debug\net8.0\HomeLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\c#PS\HomeLibrary\obj\Debug\net8.0\HomeLibrary.AssemblyInfoInputs.cache
+C:\c#PS\HomeLibrary\obj\Debug\net8.0\HomeLibrary.AssemblyInfo.cs
+C:\c#PS\HomeLibrary\obj\Debug\net8.0\HomeLibrary.csproj.CoreCompileInputs.cache
+C:\c#PS\HomeLibrary\obj\Debug\net8.0\HomeLibrary.dll
+C:\c#PS\HomeLibrary\obj\Debug\net8.0\refint\HomeLibrary.dll
+C:\c#PS\HomeLibrary\obj\Debug\net8.0\HomeLibrary.pdb
+C:\c#PS\HomeLibrary\obj\Debug\net8.0\HomeLibrary.genruntimeconfig.cache
+C:\c#PS\HomeLibrary\obj\Debug\net8.0\ref\HomeLibrary.dll
