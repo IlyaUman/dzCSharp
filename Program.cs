@@ -59,12 +59,24 @@ public class Program
         
 		if (int.TryParse(Console.ReadLine(), out int value))
 		{
+			if (value < 1 || value > 5)
+			{
+				System.Console.WriteLine("Вы ввели некорректное число");
+			} else
 			System.Console.WriteLine($"Автор - {lib[value - 1, 0]}, название - {lib[value - 1, 1]}, год - {lib[value - 1, 2]}, ISBN - {lib[value - 1, 3]}");
 		} else
 		{
 			System.Console.WriteLine("Такой книги нет");
 		}
 		;
+		System.Console.WriteLine("А теперь выведем остальные книги");
+		for (int i = 0; i < 5; i ++)
+		{
+			if (i != value)
+			{
+				System.Console.WriteLine($"Автор - {lib[i, 0]}, название - {lib[i, 1]}, год - {lib[i, 2]}, ISBN - {lib[i, 3]}");
+			};
+		};
 
         // System.Console.WriteLine("Что Вы хотите сделать?");
 		// string? action = Console.ReadLine();
