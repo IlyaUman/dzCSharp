@@ -54,6 +54,27 @@ public class Program
 		lib[4, 3] = Console.ReadLine();
 
 
+		while (true) {
+			System.Console.WriteLine("\n1. Добавить книгу");
+			System.Console.WriteLine("2. Показать книгу");
+			System.Console.WriteLine("0. Выйти\n");
+			System.Console.WriteLine("Ваш выбор");
+
+
+			string userInput = Console.ReadLine();
+
+			if (string.IsNullOrWhiteSpace(userInput) 
+			|| !int.TryParse(userInput, out int userChoice) 
+			|| userChoice < 0 
+			|| userChoice > 2)
+			{
+				System.Console.WriteLine("Вы ввели неправильное значение!");
+				continue;
+			};
+
+			System.Console.WriteLine("Молодец!"); 
+			break;
+		}
 
 		Console.WriteLine("Введите номер книги, которую хотите вывести");
         
@@ -78,6 +99,9 @@ public class Program
 			};
 		};
 
+		
+
+// System.Console.WriteLine("Введите ISBN книги, которую хотите найти");
         // System.Console.WriteLine("Что Вы хотите сделать?");
 		// string? action = Console.ReadLine();
 		// switch (action)
