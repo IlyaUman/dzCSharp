@@ -171,7 +171,7 @@ public class Program
 						}
 						for (int i = 0; i < lib.GetLength(0); i++)
 						{
-							if (ISBNToSearchBy == lib[i, 2]) {
+							if (ISBNToSearchBy == lib[i, 3]) {
 								System.Console.WriteLine($"Автор - {lib[i, 0]}, название - {lib[i, 1]}, год - {lib[i, 2]}, ISBN - {lib[i, 3]}");
 								correctISBN = true;
 							}
