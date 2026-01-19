@@ -53,15 +53,16 @@ public class Program
 		System.Console.WriteLine("Введите ISBN");
 		lib[4, 3] = Console.ReadLine();
 
+        int option;
 
-		while (true) {
+        while (true) {
 			System.Console.WriteLine("\n1. Добавить книгу");
 			System.Console.WriteLine("2. Показать книгу");
 			System.Console.WriteLine("0. Выйти\n");
 			System.Console.WriteLine("Ваш выбор");
 
 
-			string userInput = Console.ReadLine();
+			string? userInput = Console.ReadLine();
 
 			if (string.IsNullOrWhiteSpace(userInput) 
 			|| !int.TryParse(userInput, out int userChoice) 
@@ -73,31 +74,145 @@ public class Program
 			};
 
 			System.Console.WriteLine("Молодец!"); 
+			option = userChoice;
 			break;
 		}
 
-		Console.WriteLine("Введите номер книги, которую хотите вывести");
+		if (option == 2)
+		{
+            int signToSearchBy;
+            System.Console.WriteLine("Выберите признак, по которому хотите найти книгу");
+			while (true) {
+				System.Console.WriteLine("\n1. Автор");
+				System.Console.WriteLine("2. Название");
+				System.Console.WriteLine("3. ISBN");
+				System.Console.WriteLine("4. Номер");
+				System.Console.WriteLine("0. Выйти\n");
+				System.Console.WriteLine("Ваш выбор");
+
+
+				string? userInput = Console.ReadLine();
+
+				if (string.IsNullOrWhiteSpace(userInput) 
+				|| !int.TryParse(userInput, out int userChoice) 
+				|| userChoice < 0 
+				|| userChoice > 4)
+				{
+					System.Console.WriteLine("Вы ввели неправильное значение!");
+					continue;
+				};
+
+				
+				signToSearchBy = userChoice;
+				break;
+			}
+			switch (signToSearchBy)
+			{
+                case 1:
+					bool correctAuthor = false;
+					while (true) {
+						
+						Console.WriteLine("Введите автора книги, которую хотите вывести");
+						string? authorToSearchBy = Console.ReadLine();
+						if (string.IsNullOrEmpty(authorToSearchBy))
+						{
+							System.Console.WriteLine("Вы ввели неправильное значение!");
+							continue;
+						}
+						for (int i = 0; i < lib.GetLength(0); i++)
+						{
+							if (authorToSearchBy == lib[i, 0]) {
+								System.Console.WriteLine($"Автор - {lib[i, 0]}, название - {lib[i, 1]}, год - {lib[i, 2]}, ISBN - {lib[i, 3]}");
+								correctAuthor = true;
+							} 
+							
+						}
+						if (!correctAuthor) {
+							System.Console.WriteLine("Вы ввели неправильное значение!");
+							continue;
+						}
+						break;
+					}
+					break;
+				case 2:
+					bool correctName = false;
+                    while (true) {
+						Console.WriteLine("Введите название книги, которую хотите вывести");
+						string? nameToSearchBy = Console.ReadLine();
+						if (string.IsNullOrEmpty(nameToSearchBy))
+						{
+							System.Console.WriteLine("Вы ввели неправильное значение!");
+							continue;
+						}
+						for (int i = 0; i < lib.GetLength(0); i++)
+						{
+							if (nameToSearchBy == lib[i, 1]) {
+								System.Console.WriteLine($"Автор - {lib[i, 0]}, название - {lib[i, 1]}, год - {lib[i, 2]}, ISBN - {lib[i, 3]}");
+								correctName = true;
+							}
+						}
+						if (!correctName) {
+							System.Console.WriteLine("Вы ввели неправильное значение!");
+							continue;
+						}
+						break;
+					}
+					break;
+				case 3:
+					bool correctISBN = false;
+					while (true) {
+						
+						Console.WriteLine("Введите ISBN книги, которую хотите вывести");
+						string? ISBNToSearchBy = Console.ReadLine();
+						if (string.IsNullOrEmpty(ISBNToSearchBy))
+						{
+							System.Console.WriteLine("Вы ввели неправильное значение!");
+							continue;
+						}
+						for (int i = 0; i < lib.GetLength(0); i++)
+						{
+							if (ISBNToSearchBy == lib[i, 2]) {
+								System.Console.WriteLine($"Автор - {lib[i, 0]}, название - {lib[i, 1]}, год - {lib[i, 2]}, ISBN - {lib[i, 3]}");
+								correctISBN = true;
+							}
+						}
+						if (!correctISBN) {
+							System.Console.WriteLine("Вы ввели неправильное значение!");
+							continue;
+						}
+						break;
+					}
+					break;
+				case 4:
+					while (true)
+					{
+						Console.WriteLine("Введите номер книги, которую хотите вывести");
         
-		if (int.TryParse(Console.ReadLine(), out int value))
-		{
-			if (value < 1 || value > 5)
-			{
-				System.Console.WriteLine("Вы ввели некорректное число");
-			} else
-			System.Console.WriteLine($"Автор - {lib[value - 1, 0]}, название - {lib[value - 1, 1]}, год - {lib[value - 1, 2]}, ISBN - {lib[value - 1, 3]}");
-		} else
-		{
-			System.Console.WriteLine("Такой книги нет");
+						if (int.TryParse(Console.ReadLine(), out int value))
+						{
+							if (value < 1 || value > 5)
+							{
+								System.Console.WriteLine("Вы ввели некорректное число");
+								continue;
+							} else
+							System.Console.WriteLine($"Автор - {lib[value - 1, 0]}, название - {lib[value - 1, 1]}, год - {lib[value - 1, 2]}, ISBN - {lib[value - 1, 3]}");
+							break;
+						} else
+						{
+							System.Console.WriteLine("Это не номер");
+						}
+						;
+					}
+					break;
+				default:
+
+					break;
+						
+            }
 		}
-		;
-		System.Console.WriteLine("А теперь выведем остальные книги");
-		for (int i = 0; i < 5; i ++)
-		{
-			if (i != value)
-			{
-				System.Console.WriteLine($"Автор - {lib[i, 0]}, название - {lib[i, 1]}, год - {lib[i, 2]}, ISBN - {lib[i, 3]}");
-			};
-		};
+
+		
+
 
 		
 
